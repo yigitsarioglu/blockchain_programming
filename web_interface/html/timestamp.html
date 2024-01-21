@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MyGov Token</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+
+
+            
+        <script src="https://unpkg.com/@metamask/legacy-web3@latest/dist/metamask.web3.min.js"></script> 
+        
+        
+        <script src="../js/mygovscont.js"> </script>
+        <script src="../js/function.js"> </script>
+        <script>
+  
+        window.addEventListener('load', async () => {
+            // Modern dapp browsers...
+            if (window.ethereum) {
+                window.web3 = new Web3(ethereum);
+                try {
+                    // Request account access if needed
+                    await ethereum.enable();
+                } catch (error) {
+                    alert("Cannot access user ethereum account") ; 
+                }
+            }
+            // Legacy dapp browsers...
+            else if (window.web3) {
+                window.web3 = new Web3(web3.currentProvider);
+            }
+            // Non-dapp browsers...
+            else {
+                alert('Non-Ethereum browser detected. You should consider trying MetaMask!');
+            }
+            
+        } ) ; 
+  
+ 
+    
+        </script>
+    </head>
+
+
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">MyGOV Token</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="balances.html">Balances</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="donations.html">Donations</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="surveysubmit.html">Survey Submission<a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="surveyresult.html">Survey</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="projectpropose.html">Project Proposal</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="projects.html">Project</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="voting.html">Voting</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="faucet.html">Faucet</a>
+                    
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="../index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="timestamp.html">TimeStamp</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donations</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="donateusd.html">Donate USD</a>
+                                        <a class="dropdown-item" href="donatemg.html">Donate MG</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="mybalance.html">My Balance</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                
+                   
+
+                     <!-- Block timestamp-->
+                     <h2>Block Timestamp</h2>
+                     <button onclick="getTimeStamp()" >Get Block TimeStamp</button>
+                     <p id="timestamp"></p>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../js/scripts.js"></script>
+    </body>
+</html>
